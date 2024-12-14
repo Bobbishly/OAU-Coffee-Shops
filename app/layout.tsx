@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const IBM_Plex = IBM_Plex_Sans({
+  display: 'swap',
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={IBM_Plex.className}
       >
         {children}
       </body>
